@@ -118,9 +118,18 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
+// Using Spread
 function copy(originalArray){
     let newnewArray = [...originalArray];
     return newnewArray;
+}
+
+// Using loop
+function copy(originalArray) {
+    let newArray = [];
+    for (let i = 0; i < originalArray.length; i++) {
+        newArray[i] = originalArray[i];
+    } return newArray;
 }
 
 /* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", "Sherbert", etc. when those holidays roll around.
@@ -161,10 +170,11 @@ and should return the average number of words per item in the array.
 
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-function getAverageWordLength(/*code here*/){
-
-    /*code here*/
-
+function getAverageWordLength(arr){
+    let avgLength = 0;
+    for(let i = 0; i < arr.length; i++) {
+        avgLength += arr[i].split(" ").length + 1;
+    } return avgLength / arr.length;
 }
 
 
@@ -249,8 +259,11 @@ var regionalFlavors = ["Pink Bubblegum",
     "Chocolate Chocolate Chip Cheesecake",
     "Caramel 'n' Cookies"]
 
-function getRandomFlavors(/*code here*/){
-
-    /*code here*/
-
-}
+    function getRandomFlavors(originalFlavors, currentFlavors, seasonalFlavors, regionalFlavors){
+        let randomFlavors = [];
+        let combinedFlavors = [...originalFlavors, ...currentFlavors, ...seasonalFlavors, ...regionalFlavors];
+        for(let i = 0; i < 32; i++) {
+            randomFlavors[i] = combinedFlavors[(Math.floor(Math.random() * combinedFlavors.length))];
+        } return randomFlavors;
+    }
+    
