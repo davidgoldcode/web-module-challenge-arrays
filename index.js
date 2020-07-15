@@ -39,10 +39,21 @@ Your function should return a boolean TRUE if the length of the array is 31 and 
 To save you from having to count the items above, you can assume that length of originalFlavors is 31. You may also want to test your function by creating and passing an array of a different length, to make sure it returns FALSE if length is not 31. 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
+function is31Flavors(array){
+    if (array.length === 31) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
+
+// Simpler
 function is31Flavors(array){
     return (array.length === 31);
 }
+
+console.log(is31Flavors(originalFlavors));
 
 /* Task 2: Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
 
@@ -55,9 +66,9 @@ Your function should add the flavor to the front of the array and console.log th
 
 For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */ 
 
-function addFlavor(newFlavor){
-    originalFlavors.unshift(newFlavor);
-    return originalFlavors;
+function addFlavor(array, newFlavor){
+    array.unshift(newFlavor);
+    console.log(array);
 }
 
 
