@@ -47,6 +47,7 @@ function is31Flavors(array){
     }
 }
 
+console.log(is31Flavors(originalFlavors));
 
 // Simpler
 function is31Flavors(array){
@@ -68,9 +69,10 @@ For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainb
 
 function addFlavor(array, newFlavor){
     array.unshift(newFlavor);
-    console.log(array);
+    return array;
 }
 
+console.log(addFlavor(originalFlavors, 'Rainbow Sherbert'));
 
 /* Task 3: Houston, we have a problem! There are now 32 flavors in the array! Your task is to remove an item from the end of the array. 
 
@@ -84,8 +86,10 @@ For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", 
 
 function removeLastFlavor(array){
     array.pop();
-    console.log(array);
+    return array;
 }
+
+console.log(removeLastFlavor(originalFlavors));
 
 /* Task 4: Write a function that returns a flavor at a given index in the array.
 
@@ -99,6 +103,8 @@ For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", a
 function getFlavorByIndex(array, index){
     return array[index];
 }
+
+console.log(getFlavorByIndex(originalFlavors, 2));
 
 flavorByIndex = (array, index) => array[index]; // Arrow Function 
 
@@ -120,6 +126,8 @@ function removeFlavorByName(array, removeFlavor){
     return array;
 }
 
+console.log(removeFlavorByName(originalFlavors, 'Vanilla'));
+
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
 
@@ -135,6 +143,8 @@ function copy(originalArray){
     return newnewArray;
 }
 
+console.log(copy(originalFlavors));
+
 // Using loop
 function copy(originalArray) {
     let newArray = [];
@@ -142,6 +152,8 @@ function copy(originalArray) {
         newArray[i] = originalArray[i];
     } return newArray;
 }
+
+console.log(copy(originalFlavors));
 
 /* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", "Sherbert", etc. when those holidays roll around.
 
@@ -167,6 +179,8 @@ function filterByWord(arr, flavorBase){
     } return filteredArray
 }
 
+console.log(filterByWord(originalFlavors, "Chocolate"));
+
 
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
@@ -188,6 +202,7 @@ function getAverageWordLength(arr){
     } return avgLength / arr.length;
 }
 
+console.log(getAverageWordLength(originalFlavors));
 
 /* STRETCH 2: Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors.
 
@@ -278,3 +293,4 @@ var regionalFlavors = ["Pink Bubblegum",
         } return randomFlavors;
     }
     
+    console.log(getRandomFlavors(originalFlavors, currentFlavors, seasonalFlavors, regionalFlavors));
